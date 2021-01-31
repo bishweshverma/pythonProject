@@ -1,0 +1,17 @@
+import re
+retrieve = int(input("What do you want to extract:\n1 Email\n2 Phone.no "))
+string = input("Enter: ")
+if retrieve == 1:
+    find = re.compile(r"[a-zA-Z0-9._+%]+@[a-zA-Z0-9._+%]+")
+    find1 = find.findall(string)
+    j = 1
+    for i in find1:
+        print(f"email{j}:{i}")
+        j += 1
+elif retrieve == 2:
+    find2 = re.compile(r"\d{10}")
+    find3 = find2.findall(string)
+    h = 1
+    for g in find3:
+        print(f"ph.{h}:{g}")
+        h += 1
